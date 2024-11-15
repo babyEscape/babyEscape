@@ -21,9 +21,7 @@ namespace Unity.VRTemplate
 
         public void Fire()
         {
-            GameObject newObject = Instantiate(m_ProjectilePrefab, m_StartPoint.position, m_StartPoint.rotation, null);
-
-            if (newObject.TryGetComponent(out Rigidbody rigidBody))
+            if (m_ProjectilePrefab.TryGetComponent(out Rigidbody rigidBody))
                 ApplyForce(rigidBody);
         }
 

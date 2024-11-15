@@ -15,7 +15,7 @@ public class ChangeColorOnCollision : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         // Check if the colliding object is the sphere
-        if (collision.gameObject.CompareTag("Sphere"))
+        if (collision.gameObject.CompareTag("Dummy"))
         {
             // Change the cube's color to a random color
             cubeRenderer.material.color = new Color(

@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioLoudnessDetection : MonoBehaviour
 {
     public int sampleWindow = 64;
-    public bool isMicrophoneActive = true; // Toggle microphone detection
+    public bool isMicrophoneActive = false; // Toggle microphone detection
     private AudioClip microphoneClip;
 
     // Start is called before the first frame update
@@ -85,4 +85,15 @@ public class AudioLoudnessDetection : MonoBehaviour
 
         microphoneClip = null;
     }
+
+    public void SetActive()
+    {
+        isMicrophoneActive = true;
+    }
+
+    public void SetInactive()
+    {
+        isMicrophoneActive = false;
+    }
+    
 }
