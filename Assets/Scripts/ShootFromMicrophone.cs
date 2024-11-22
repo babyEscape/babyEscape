@@ -7,9 +7,6 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class ShootFromMicrophone : MonoBehaviour
 {
-    public AudioSource source;
-    public Vector3 minScale;
-    public Vector3 maxScale;
     public AudioLoudnessDetection detector;
 
     public float loudnessSensibility = 100;
@@ -20,11 +17,14 @@ public class ShootFromMicrophone : MonoBehaviour
     
     public XRSocketInteractor currentSocket;
     
-    public Transform playerHead; // Assign the player's head transform
     public float respawnDistance = 10f; // Distance threshold for respawn
+    public float timeToRespawn = 5.0f;
 
     private Rigidbody rb;
     private bool isLaunched = false;
+    private float timeSinceLaunch = 0f;
+
+    public GameObject dummyModel = null;
     
     // Start is called before the first frame update
     void Start()
@@ -43,16 +43,18 @@ public class ShootFromMicrophone : MonoBehaviour
                 Debug.Log("fire!");
                 currentSocket.socketActive = false;
                 Invoke("ApplyForce", 0.05f);
-                Invoke("ActivateSocket", 2.0f);
+                Invoke("ActivateSocket", 0.5f);
             }
         }
         
         if (isLaunched)
         {
-            float distance = Vector3.Distance(transform.position, playerHead.position);
-            if (distance > respawnDistance)
+            float distance = Vector3.Distance(transform.position, _startPoint.position);
+            if (distance > respawnDistance || (Time.timeSinceLevelLoad - timeSinceLaunch) > timeToRespawn)
             {
                 RespawnDummy();
+                HideDummy();
+                Invoke("ShowDummy", 0.3f);
             }
         }
     }
@@ -62,6 +64,7 @@ public class ShootFromMicrophone : MonoBehaviour
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.AddForce(_startPoint.forward * _launchSpeed, ForceMode.Impulse);
         isLaunched = true;
+        timeSinceLaunch = Time.timeSinceLevelLoad;
     }
 
     void ActivateSocket()
@@ -72,12 +75,20 @@ public class ShootFromMicrophone : MonoBehaviour
     void RespawnDummy()
     {
         isLaunched = false;
-        rb.isKinematic = true;
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         transform.position = currentSocket.transform.position;
         transform.rotation = currentSocket.transform.rotation;
         currentSocket.StartManualInteraction(GetComponent<IXRSelectInteractable>());
     }
-    
+
+    void HideDummy()
+    {
+        dummyModel.transform.localScale = Vector3.zero;
+    }
+
+    void ShowDummy()
+    {
+        dummyModel.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+    }
 }
