@@ -5775,7 +5775,7 @@ MonoBehaviour:
   m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
-  m_RecycleDelayTime: 1
+  m_RecycleDelayTime: 5
   m_HoverSocketSnapping: 0
   m_SocketSnappingRadius: 0.1
   m_SocketScaleMode: 0
@@ -9114,6 +9114,10 @@ PrefabInstance:
       propertyPath: detector
       value: 
       objectReference: {fileID: 1707304647}
+    - target: {fileID: 8613472259888906503, guid: 5315730b24bf14111b02ac6f80d606e6, type: 3}
+      propertyPath: playerHead
+      value: 
+      objectReference: {fileID: 1393247480}
     - target: {fileID: 8613472259888906503, guid: 5315730b24bf14111b02ac6f80d606e6, type: 3}
       propertyPath: _startPoint
       value: 

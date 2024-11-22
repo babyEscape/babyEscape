@@ -20,10 +20,16 @@ public class ShootFromMicrophone : MonoBehaviour
     
     public XRSocketInteractor currentSocket;
     
+    public Transform playerHead; // Assign the player's head transform
+    public float respawnDistance = 10f; // Distance threshold for respawn
+
+    private Rigidbody rb;
+    private bool isLaunched = false;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -40,17 +46,38 @@ public class ShootFromMicrophone : MonoBehaviour
                 Invoke("ActivateSocket", 2.0f);
             }
         }
+        
+        if (isLaunched)
+        {
+            float distance = Vector3.Distance(transform.position, playerHead.position);
+            if (distance > respawnDistance)
+            {
+                RespawnDummy();
+            }
+        }
     }
     
     void ApplyForce()
     {
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.AddForce(_startPoint.forward * _launchSpeed, ForceMode.Impulse);
+        isLaunched = true;
     }
 
     void ActivateSocket()
     {
         currentSocket.socketActive = true;
+    }
+    
+    void RespawnDummy()
+    {
+        isLaunched = false;
+        rb.isKinematic = true;
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        transform.position = currentSocket.transform.position;
+        transform.rotation = currentSocket.transform.rotation;
+        currentSocket.StartManualInteraction(GetComponent<IXRSelectInteractable>());
     }
     
 }
