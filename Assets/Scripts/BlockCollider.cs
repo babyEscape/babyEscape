@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BlockCollider : MonoBehaviour
 {
-    public GameObject cribDoor;
+    public GameObject door;
     public GameObject cube;
     public GameObject cylinder;
     public GameObject triangle;
@@ -27,7 +27,7 @@ public class BlockCollider : MonoBehaviour
     {
         if (cubeIn && cylinderIn && triangleIn)
         { 
-            cribDoor.gameObject.SetActive(false);
+            door.gameObject.SetActive(false);
         }
     }
 
