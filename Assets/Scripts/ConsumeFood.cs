@@ -7,7 +7,8 @@ public class EatFood : MonoBehaviour
     public AudioClip eatingSound;          // Drag and drop your eating sound
     public Transform mouthPosition;        // Reference to where the "mouth" is in the XR rig
     private AudioSource audioSource;       // Audio source for playing the sound
-
+    
+    
     public MonoBehaviour climbLocomotion;
     private void Start()
     {
