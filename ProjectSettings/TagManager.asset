@@ -9,14 +9,16 @@ TagManager:
   - Button
   - Food
   - Fork
+  - Climbable
+  - Ground
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - WinText
+  - 
   - 
   - 
   - 
