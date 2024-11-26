@@ -19,7 +19,7 @@ public class BlockCollider : MonoBehaviour
     {
         cubeIn = false;
         cylinderIn = false;
-        triangleIn = true; // set this to false later when we have a triangle model
+        triangleIn = false;
     }
 
     // Update is called once per frame
@@ -41,9 +41,9 @@ public class BlockCollider : MonoBehaviour
         {
             cylinderIn = true;
         }
-        // else if (other.gameObject == triangle)
-        // {
-        //     triangleIn = true;
-        // }
+        else if (other.gameObject == triangle)
+        {
+            triangleIn = true;
+        }
     }
 }
