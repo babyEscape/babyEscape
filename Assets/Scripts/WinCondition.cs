@@ -6,7 +6,6 @@ using UnityEngine;
 public class WinCondition : MonoBehaviour
 {
     public OVRScreenFade oVRScreenFade;
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Fork")) 
@@ -22,4 +21,5 @@ public class WinCondition : MonoBehaviour
             oVRScreenFade.FadeOut();
         }
     }
+    
 }
