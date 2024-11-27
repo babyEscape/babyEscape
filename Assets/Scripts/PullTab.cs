@@ -9,10 +9,11 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class PullTab : MonoBehaviour
 {
     public GameObject stringRenderer;
-    public Transform pullTabGrabObject;
+    public Transform pullTabGrabObject, objectParent;
+    public float stringStretchLimit;
 
     private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable interactable;
-    private Transform interactor;
+    private UnityEngine.XR.Interaction.Toolkit.Interactors.IXRSelectInteractor interactor;
 
     private void Awake()
     {
@@ -34,13 +35,23 @@ public class PullTab : MonoBehaviour
 
     private void PrepareString(SelectEnterEventArgs arg0)
     {
-        interactor = arg0.interactorObject.transform;
+        interactor = arg0.interactorObject;
     }
 
     private void Update()
     {
         if (interactor != null)
         {
+            Vector3 grabPointLocalSpace = objectParent.InverseTransformPoint(pullTabGrabObject.position); // localPosition
+            float grabPointMagnitude = grabPointLocalSpace.magnitude;
+
+            if (grabPointMagnitude >= stringStretchLimit)
+            {
+                interactable.enabled = false;
+                ResetString(null);
+                interactable.enabled = true;
+            }
+
             stringRenderer.GetComponent<StringScript>().CreateString(pullTabGrabObject.position);
         }
     }
