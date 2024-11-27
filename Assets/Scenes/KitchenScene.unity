@@ -9417,6 +9417,8 @@ MonoBehaviour:
   eatingSound: {fileID: 8300000, guid: 9b2402ba15bd58e4799fcd5a6138e8be, type: 3}
   mouthPosition: {fileID: 1393247480}
   canvasObject: {fileID: 0}
+  uiDuration: 5
+  uiStartDuration: 0.1
   climbLocomotion: {fileID: 1137235290}
 --- !u!1001 &1395977616
 PrefabInstance:
