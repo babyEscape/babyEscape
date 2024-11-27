@@ -2,12 +2,20 @@ using System.Collections;
 using UnityEngine;
 public class EatFood : MonoBehaviour
 {
+    [Header("Food Related Settings")]
     public ParticleSystem eatingParticles; // Drag and drop your particle system prefab
     public AudioClip eatingSound;          // Drag and drop your eating sound
     public Transform mouthPosition;        // Reference to where the "mouth" is in the XR rig
     public GameObject canvasObject;
+    
+    [Header("UI Settings")]
+    public float uiDuration;
+    public float uiStartDuration;
+    
+    
     private AudioSource audioSource;       // Audio source for playing the sound
     
+    [Header("Locomotion File")]
     public MonoBehaviour climbLocomotion;
     private void Start()
     {
@@ -51,8 +59,8 @@ public class EatFood : MonoBehaviour
 
     private IEnumerator FadeAfterCanvasGroup()
     {
-        yield return new WaitForSeconds(5f);
-        StartCoroutine(FadeCanvasGroup(canvasObject.GetComponent<CanvasGroup>(),1f, 0f, 2f));
+        yield return new WaitForSeconds(uiStartDuration);
+        StartCoroutine(FadeCanvasGroup(canvasObject.GetComponent<CanvasGroup>(),1f, 0f, uiDuration));
     }
     
     private IEnumerator FadeCanvasGroup(CanvasGroup canvasGroup, float start, float end, float duration)
