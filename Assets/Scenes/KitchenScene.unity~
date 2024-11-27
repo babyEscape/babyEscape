@@ -211,6 +211,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1942699462}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+<<<<<<< HEAD
 --- !u!1 &80979591
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,6 +470,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80979591}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+=======
 --- !u!1001 &69104866
 PrefabInstance:
   m_ObjectHideFlags: 0
