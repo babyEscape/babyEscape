@@ -18,7 +18,7 @@ public class ShootFromMicrophone : MonoBehaviour
     public XRSocketInteractor currentSocket;
     
     public float respawnDistance = 10f; // Distance threshold for respawn
-    public float timeToRespawn = 5.0f;
+    public float timeToRespawn = 3.0f;
 
     private Rigidbody rb;
     private bool isLaunched = false;
