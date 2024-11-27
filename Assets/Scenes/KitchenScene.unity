@@ -281,11 +281,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5696276713092131241, guid: 055347f5ca9727c4d8f53496c4c60543, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.075213
+      value: 1.4406779
       objectReference: {fileID: 0}
     - target: {fileID: 5696276713092131241, guid: 055347f5ca9727c4d8f53496c4c60543, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.05644897
+      value: 0.06780086
       objectReference: {fileID: 0}
     - target: {fileID: 5696276713092131241, guid: 055347f5ca9727c4d8f53496c4c60543, type: 3}
       propertyPath: m_LocalScale.z
@@ -297,7 +297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5696276713092131241, guid: 055347f5ca9727c4d8f53496c4c60543, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.494
+      value: 2.478
       objectReference: {fileID: 0}
     - target: {fileID: 5696276713092131241, guid: 055347f5ca9727c4d8f53496c4c60543, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4800,7 +4800,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "WASHING MACHINE \nWOBBLY.\nTHINGS WILL FALL \nOFF IT IF RUN!"
+  m_text: "WASHING MACHINE \nWOBBLY.\nTHINGS WILL FALL \nOFF IT IF TURNED ON!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4383663537c2101478b8c01e986b93e6, type: 2}
   m_sharedMaterial: {fileID: -2704257265753504082, guid: 4383663537c2101478b8c01e986b93e6, type: 2}
@@ -4863,7 +4863,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 9.804117, y: 2.3084536, z: 9.826766, w: 2.3797977}
+  m_margin: {x: 9.811116, y: 2.3084536, z: 9.842074, w: 2.3797977}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -6174,11 +6174,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.842
+      value: -14.897
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.267
+      value: 6.333
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7844,7 +7844,7 @@ MonoBehaviour:
   eatingParticles: {fileID: 1811027874}
   eatingSound: {fileID: 8300000, guid: 9b2402ba15bd58e4799fcd5a6138e8be, type: 3}
   mouthPosition: {fileID: 1393247480}
-  canvasObject: {fileID: 816712074}
+  canvasObject: {fileID: 0}
   climbLocomotion: {fileID: 1137235290}
 --- !u!1001 &1395977616
 PrefabInstance:
