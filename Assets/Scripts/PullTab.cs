@@ -11,7 +11,7 @@ public class PullTab : MonoBehaviour
     public GameObject stringRenderer;
     public Transform pullTabGrabObject, objectParent;
     public float stringStretchLimit;
-    public AudioClip toySound1, toySound2, toySound3, toySound4;
+    public AudioClip toySound1, toySound2, toySound3, toySound4, toySoundTutorial;
     public GameObject canvasObject;
     
     public float uiDuration;
@@ -20,8 +20,8 @@ public class PullTab : MonoBehaviour
     private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable interactable;
     private UnityEngine.XR.Interaction.Toolkit.Interactors.IXRSelectInteractor interactor;
     private AudioSource audioSource;
-    private AudioClip[] audioClips = new AudioClip[4];
-    private String[] subtitles = new String[4];
+    private AudioClip[] audioClips = new AudioClip[5];
+    private String[] subtitles = new String[5];
     private int toypulled = 0;
 
     private CanvasGroup canvasGroup; 
@@ -38,16 +38,18 @@ public class PullTab : MonoBehaviour
     {
         audioSource = gameObject.AddComponent<AudioSource>();
         audioClips[0] = toySound1;
-        audioClips[1] = toySound2;
-        audioClips[2] = toySound3;
-        audioClips[3] = toySound4;
+        audioClips[1] = toySoundTutorial;
+        audioClips[2] = toySound2;
+        audioClips[3] = toySound3;
+        audioClips[4] = toySound4;
         interactable.selectEntered.AddListener(PrepareString);
         interactable.selectExited.AddListener(ResetString);
         
         subtitles[0] = "That was shocking";
-        subtitles[1] = "Remember children, always stick forks in electrical sockets";
-        subtitles[2] = "You should stick a fork in the electrical socket";
-        subtitles[3] = "Ow";
+        subtitles[1] = "I can't believe I got these powers by sticking a fork in the electrical socket";
+        subtitles[2] = "Remember children, always stick forks in electrical sockets";
+        subtitles[3] = "You should stick a fork in the electrical socket";
+        subtitles[4] = "Ow";
         
 
     }
@@ -82,7 +84,7 @@ public class PullTab : MonoBehaviour
                     textMesh.SetText(subtitles[toypulled]);
                     StartCoroutine(FadeCanvasSequence());
                 }
-                if (toypulled < 3) { toypulled++; }
+                if (toypulled < 4) { toypulled++; }
             }
             stringRenderer.GetComponent<StringScript>().CreateString(pullTabGrabObject.position);
         }
