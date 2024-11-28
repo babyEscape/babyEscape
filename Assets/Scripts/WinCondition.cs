@@ -17,12 +17,16 @@ public class WinCondition : MonoBehaviour
     public OVRScreenFade fade;
 
     public AudioClip zap;
-    public AudioClip doorOpen;
     private AudioSource audioSource;
     
     public ParticleSystem particles;
 
     private bool win = false;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     
     void Update()
     {
@@ -37,18 +41,13 @@ public class WinCondition : MonoBehaviour
     {
         if (zap != null)
         {
-            audioSource.PlayOneShot(doorOpen);
+            audioSource.PlayOneShot(zap);
         }
         particles.Play();
         
         fade.FadeOut();
         yield return new WaitForSeconds(fade.fadeTime);
         
-        if (doorOpen != null)
-        {
-            audioSource.PlayOneShot(doorOpen);
-        }
-
         closedDoor.gameObject.SetActive(false);
         openDoor.gameObject.SetActive(true);
         
