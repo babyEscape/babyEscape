@@ -5,27 +5,20 @@ using UnityEngine;
 public class BlockCollider : MonoBehaviour
 {
     public GameObject door;
-    public GameObject cube;
-    public GameObject cylinder;
-    public GameObject triangle;
 
-    private bool cubeIn;
-    private bool cylinderIn;
-    private bool triangleIn;
+    private int toysIn;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        cubeIn = false;
-        cylinderIn = false;
-        triangleIn = false;
+        toysIn = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (cubeIn && cylinderIn && triangleIn)
+        if (toysIn >= 3)
         { 
             door.gameObject.SetActive(false);
         }
@@ -33,17 +26,9 @@ public class BlockCollider : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        if (other.gameObject == cube)
+        if (other.gameObject.tag == "toyBlock")
         {
-            cubeIn = true;
-        }
-        else if (other.gameObject == cylinder)
-        {
-            cylinderIn = true;
-        }
-        else if (other.gameObject == triangle)
-        {
-            triangleIn = true;
+            toysIn++;
         }
     }
 }
