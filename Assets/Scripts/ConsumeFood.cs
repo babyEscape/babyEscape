@@ -13,7 +13,6 @@ public class EatFood : MonoBehaviour
     public float uiDuration;
     public float uiStartDuration;
     
-    
     private AudioSource audioSource;       // Audio source for playing the sound
     
     [Header("Locomotion File")]
@@ -64,7 +63,7 @@ public class EatFood : MonoBehaviour
         CanvasGroup canvasGroup = canvasObject.GetComponent<CanvasGroup>();
         
         yield return new WaitForSeconds(uiStartDuration);
-
+    
         // Fade in
         yield return StartCoroutine(FadeCanvasGroup(canvasGroup, 0f, 1f, 1));
         
@@ -74,18 +73,18 @@ public class EatFood : MonoBehaviour
         // Fade out
         yield return StartCoroutine(FadeCanvasGroup(canvasGroup, 1f, 0f, 1));
     }
-
+    
     private IEnumerator FadeCanvasGroup(CanvasGroup canvasGroup, float start, float end, float duration)
     {
         float elapsedTime = 0f;
-
+    
         while (elapsedTime < duration)
         {
             elapsedTime += Time.deltaTime;
             canvasGroup.alpha = Mathf.Lerp(start, end, elapsedTime / duration);
             yield return null;
         }
-
+    
         canvasGroup.alpha = end;
     }
 }
