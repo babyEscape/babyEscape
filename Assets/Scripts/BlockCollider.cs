@@ -5,33 +5,28 @@ using UnityEngine;
 public class BlockCollider : MonoBehaviour
 {
     public GameObject door;
+
+    private int toysIn;
+
     public GameObject doorNewPosition;
-    public GameObject cube;
-    public GameObject cylinder;
-    public GameObject triangle;
     public AudioClip victorySound;
     public AudioClip doorSound;
     public OVRScreenFade fade;
     
     private AudioSource audioSource;
-    private bool cubeIn;
-    private bool cylinderIn;
-    private bool triangleIn;
     private bool puzzleComplete = false;
 
     // Start is called before the first frame update
     void Start()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
-        cubeIn = false;
-        cylinderIn = false;
-        triangleIn = false;
+        toysIn = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (cubeIn && cylinderIn && triangleIn && !puzzleComplete)
+        if (toysIn >= 3 && !puzzleComplete)
         {
             puzzleComplete = true;
             StartCoroutine(HandlePuzzleCompletion());
@@ -61,17 +56,9 @@ public class BlockCollider : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        if (other.gameObject == cube)
+        if (other.gameObject.tag == "toyBlock")
         {
-            cubeIn = true;
-        }
-        else if (other.gameObject == cylinder)
-        {
-            cylinderIn = true;
-        }
-        else if (other.gameObject == triangle)
-        {
-            triangleIn = true;
+            toysIn++;
         }
     }
 }
