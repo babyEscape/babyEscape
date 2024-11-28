@@ -1241,7 +1241,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 49e35ad0d6c054c20ad3aecdf755ad35, type: 2}
+  - {fileID: 2100000, guid: df518a939727f48de94e1b20b759a5f2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2113,7 +2113,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 49e35ad0d6c054c20ad3aecdf755ad35, type: 2}
+  - {fileID: 2100000, guid: bb696299e31804fe790da21a95477d9e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4256,7 +4256,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 49e35ad0d6c054c20ad3aecdf755ad35, type: 2}
+  - {fileID: 2100000, guid: bb696299e31804fe790da21a95477d9e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5968,11 +5968,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8147d58e2ee9a4030ba0e3df818c6a20, type: 3}
   m_PrefabInstance: {fileID: 717080399}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &728711631 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 04a04e0fb13bc124ca73e950d8b3672a, type: 3}
-  m_PrefabInstance: {fileID: 1683701427}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &731897103 stripped
 GameObject:
@@ -11763,9 +11758,9 @@ MonoBehaviour:
   eatingParticles: {fileID: 1811027874}
   eatingSound: {fileID: 8300000, guid: 9b2402ba15bd58e4799fcd5a6138e8be, type: 3}
   mouthPosition: {fileID: 1393247480}
-  canvasObject: {fileID: 816712074}
-  uiDuration: 3
-  uiStartDuration: 1
+  canvasObject: {fileID: 0}
+  uiDuration: 0
+  uiStartDuration: 0
   climbLocomotion: {fileID: 1137235290}
 --- !u!1001 &1395977616
 PrefabInstance:
@@ -13045,12 +13040,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0474eb4f674da0444be75b24463af33e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crate: {fileID: 1290835592}
-  washer: {fileID: 728711631}
+  crate: {fileID: 0}
+  washer: {fileID: 0}
   forceMagnitude: 250
   movementDelay: 0.5
-  machineBoot: {fileID: 8300000, guid: 4c2b414a501f6493084c87e0c88c0807, type: 3}
-  machineOn: {fileID: 8300000, guid: 48a4a682709994e97b6166e3c3ab71a8, type: 3}
+  machineBoot: {fileID: 0}
+  machineOn: {fileID: 0}
 --- !u!1 &1554866590 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b52b88d05ac37476f950c53e53f4d6df, type: 3}
@@ -13428,7 +13423,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1599720456}
   - component: {fileID: 1599720458}
-  - component: {fileID: 1599720457}
   m_Layer: 0
   m_Name: BlockPuzzle
   m_TagString: Untagged
@@ -13457,128 +13451,6 @@ Transform:
   - {fileID: 9152284}
   m_Father: {fileID: 457371186}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1599720457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1599720455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_Colliders: []
-  m_InteractionLayers:
-    m_Bits: 1
-  m_DistanceCalculationMode: 1
-  m_SelectMode: 0
-  m_FocusMode: 1
-  m_CustomReticle: {fileID: 0}
-  m_AllowGazeInteraction: 0
-  m_AllowGazeSelect: 0
-  m_OverrideGazeTimeToSelect: 0
-  m_GazeTimeToSelect: 0.5
-  m_OverrideTimeToAutoDeselectGaze: 0
-  m_TimeToAutoDeselectGaze: 3
-  m_AllowGazeAssistance: 0
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstFocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastFocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
-  m_StartingInteractionStrengthFilters: []
-  m_AttachTransform: {fileID: 0}
-  m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
-  m_MatchAttachPosition: 1
-  m_MatchAttachRotation: 1
-  m_SnapToColliderVolume: 1
-  m_ReinitializeDynamicAttachEverySingleGrab: 1
-  m_AttachEaseInTime: 0.15
-  m_MovementType: 2
-  m_VelocityDamping: 1
-  m_VelocityScale: 1
-  m_AngularVelocityDamping: 1
-  m_AngularVelocityScale: 1
-  m_TrackPosition: 1
-  m_SmoothPosition: 0
-  m_SmoothPositionAmount: 8
-  m_TightenPosition: 0.1
-  m_TrackRotation: 1
-  m_SmoothRotation: 0
-  m_SmoothRotationAmount: 8
-  m_TightenRotation: 0.1
-  m_TrackScale: 1
-  m_SmoothScale: 0
-  m_SmoothScaleAmount: 8
-  m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
-  m_ThrowSmoothingDuration: 0.25
-  m_ThrowSmoothingCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_ThrowVelocityScale: 1.5
-  m_ThrowAngularVelocityScale: 1
-  m_ForceGravityOnDetach: 0
-  m_RetainTransformParent: 1
-  m_StartingSingleGrabTransformers: []
-  m_StartingMultipleGrabTransformers: []
-  m_AddDefaultGrabTransformers: 1
-  m_FarAttachMode: 0
 --- !u!54 &1599720458
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21544,7 +21416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28f2ec8bfa6334911870323ff143b491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 500
+  speed: 550
 --- !u!4 &1900725529 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 99d53c0de5a054c7ab90d7090f736640, type: 3}
@@ -23806,7 +23678,7 @@ PrefabInstance:
     - target: {fileID: -4683669308469848369, guid: 667e76870cf119b428485cdfc539b66b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ed91c0b0a31a0426592079cbc43bb717, type: 2}
+      objectReference: {fileID: 2100000, guid: 49e35ad0d6c054c20ad3aecdf755ad35, type: 2}
     - target: {fileID: 919132149155446097, guid: 667e76870cf119b428485cdfc539b66b, type: 3}
       propertyPath: m_Name
       value: ToyCover
@@ -24013,7 +23885,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 49e35ad0d6c054c20ad3aecdf755ad35, type: 2}
+  - {fileID: 2100000, guid: df518a939727f48de94e1b20b759a5f2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
