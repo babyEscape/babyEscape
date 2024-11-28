@@ -19,6 +19,9 @@ public class DialogueTrigger : MonoBehaviour
     
     private bool triggered = false;
 
+    public GameObject robotLeft;
+    public GameObject robotRight;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,5 +61,7 @@ public class DialogueTrigger : MonoBehaviour
         }
         electricityleft.SetActive(true);
         electricityright.SetActive(true);
+        robotLeft.SetActive(true);
+        robotRight.SetActive(true);
     }
 }
