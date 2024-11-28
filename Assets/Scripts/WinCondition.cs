@@ -3,21 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class WinCondition : MonoBehaviour
 {
     public OVRScreenFade oVRScreenFade;
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Fork")) 
-        {
-            OnGameWin();
-        }
-    }
+    public XRSocketInteractor currentSocket;
 
-    private void OnGameWin()
+    void Update()
     {
-        if (oVRScreenFade != null)
+        if (currentSocket.hasSelection)
         {
             oVRScreenFade.FadeOut();
         }
