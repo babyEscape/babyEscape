@@ -18,7 +18,6 @@ public class FallingVignette : MonoBehaviour
 
     void Start()
     {
-        // Use the main camera if playerTransform is not assigned
         if (playerTransform == null)
         {
             if (Camera.main != null)
@@ -35,7 +34,6 @@ public class FallingVignette : MonoBehaviour
 
         lastPlayerY = playerTransform.position.y;
 
-        // Get the MeshRenderer component
         meshRenderer = GetComponent<MeshRenderer>();
         if (meshRenderer == null)
         {
@@ -49,31 +47,25 @@ public class FallingVignette : MonoBehaviour
 
     void Update()
     {
-        // Compute vertical speed
         float currentY = playerTransform.position.y;
         float verticalSpeed = (currentY - lastPlayerY) / Time.deltaTime;
         lastPlayerY = currentY;
 
-        // If verticalSpeed is negative, player is falling
         if (verticalSpeed < 0f)
         {
-            float fallSpeed = -verticalSpeed; // Convert to positive
-            // Compute aperture size based on fall speed
+            float fallSpeed = -verticalSpeed; 
             float apertureSize = ComputeApertureSize(fallSpeed);
             UpdateVignette(apertureSize);
         }
         else
         {
-            // Not falling, reset the vignette
             UpdateVignette(1f);
         }
     }
 
     float ComputeApertureSize(float fallSpeed)
     {
-        // Clamp fallSpeed to maxFallSpeed
         fallSpeed = Mathf.Clamp(fallSpeed, 0f, maxFallSpeed);
-        // Map fallSpeed to apertureSize
         float t = fallSpeed / maxFallSpeed;
         float apertureSize = Mathf.Lerp(1f, minApertureSize, t);
         return apertureSize;
