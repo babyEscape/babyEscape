@@ -5969,6 +5969,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8147d58e2ee9a4030ba0e3df818c6a20, type: 3}
   m_PrefabInstance: {fileID: 717080399}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &728711631 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 04a04e0fb13bc124ca73e950d8b3672a, type: 3}
+  m_PrefabInstance: {fileID: 1683701427}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &731897103 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5a8f81dd73093214bac7a6f2ec9d5ac7, type: 3}
@@ -11758,9 +11763,9 @@ MonoBehaviour:
   eatingParticles: {fileID: 1811027874}
   eatingSound: {fileID: 8300000, guid: 9b2402ba15bd58e4799fcd5a6138e8be, type: 3}
   mouthPosition: {fileID: 1393247480}
-  canvasObject: {fileID: 0}
-  uiDuration: 0
-  uiStartDuration: 0
+  canvasObject: {fileID: 816712074}
+  uiDuration: 4
+  uiStartDuration: 0.5
   climbLocomotion: {fileID: 1137235290}
 --- !u!1001 &1395977616
 PrefabInstance:
@@ -13040,12 +13045,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0474eb4f674da0444be75b24463af33e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crate: {fileID: 0}
-  washer: {fileID: 0}
+  crate: {fileID: 1290835592}
+  washer: {fileID: 728711631}
   forceMagnitude: 250
   movementDelay: 0.5
-  machineBoot: {fileID: 0}
-  machineOn: {fileID: 0}
+  machineBoot: {fileID: 8300000, guid: 4c2b414a501f6493084c87e0c88c0807, type: 3}
+  machineOn: {fileID: 8300000, guid: 48a4a682709994e97b6166e3c3ab71a8, type: 3}
 --- !u!1 &1554866590 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b52b88d05ac37476f950c53e53f4d6df, type: 3}
