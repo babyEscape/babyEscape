@@ -38,16 +38,25 @@ public class DialogueTrigger : MonoBehaviour
         if (other.gameObject == player && triggered == false)
         {
             triggered = true;
-            if (congrats != null && bzzz != null)
+            if (congrats != null)
             {
                 robotSource.PlayOneShot(congrats);
-                rightHandSource.loop = true;
-                leftHandSource.loop = true;
-                rightHandSource.PlayOneShot(bzzz);
-                leftHandSource.PlayOneShot(bzzz);
+                Invoke("StartElectricity", 2f);
             }
-            electricityleft.SetActive(true);
-            electricityright.SetActive(true);
+            
         }
+    }
+
+    private void StartElectricity()
+    {
+        if (bzzz != null)
+        {
+            rightHandSource.loop = true;
+            leftHandSource.loop = true;
+            rightHandSource.PlayOneShot(bzzz);
+            leftHandSource.PlayOneShot(bzzz);
+        }
+        electricityleft.SetActive(true);
+        electricityright.SetActive(true);
     }
 }
