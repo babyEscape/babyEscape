@@ -7,8 +7,8 @@ public class DialogueTrigger : MonoBehaviour
     public GameObject player;
     public AudioClip bzzz;
     public AudioClip congrats;
-    public ParticleSystem electricityleft;
-    public ParticleSystem electricityright;
+    public GameObject electricityleft;
+    public GameObject electricityright;
     
     public GameObject robot;
     public GameObject leftHand;
@@ -16,6 +16,8 @@ public class DialogueTrigger : MonoBehaviour
     private AudioSource robotSource;
     private AudioSource leftHandSource;
     private AudioSource rightHandSource;
+    
+    private bool triggered = false;
 
     // Start is called before the first frame update
     void Start()
@@ -33,8 +35,9 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        if (other.gameObject == player)
+        if (other.gameObject == player && triggered == false)
         {
+            triggered = true;
             if (congrats != null && bzzz != null)
             {
                 robotSource.PlayOneShot(congrats);
@@ -43,8 +46,8 @@ public class DialogueTrigger : MonoBehaviour
                 rightHandSource.PlayOneShot(bzzz);
                 leftHandSource.PlayOneShot(bzzz);
             }
-            electricityleft.Play();
-            electricityright.Play();
+            electricityleft.SetActive(true);
+            electricityright.SetActive(true);
         }
     }
 }
