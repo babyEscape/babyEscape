@@ -5,15 +5,18 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 
-
 public class PullTab : MonoBehaviour
 {
     public GameObject stringRenderer;
     public Transform pullTabGrabObject, objectParent;
     public float stringStretchLimit;
+    public AudioClip toySound1, toySound2, toySound3, toySound4; 
 
     private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable interactable;
     private UnityEngine.XR.Interaction.Toolkit.Interactors.IXRSelectInteractor interactor;
+    private AudioSource audioSource;
+    private AudioClip[] audioClips = new AudioClip[4];
+    private int toypulled = 0;
 
     private void Awake()
     {
@@ -22,6 +25,11 @@ public class PullTab : MonoBehaviour
 
     private void Start()
     {
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioClips[0] = toySound1;
+        audioClips[1] = toySound2;
+        audioClips[2] = toySound3;
+        audioClips[3] = toySound4;
         interactable.selectEntered.AddListener(PrepareString);
         interactable.selectExited.AddListener(ResetString);
     }
@@ -50,8 +58,12 @@ public class PullTab : MonoBehaviour
                 interactable.enabled = false;
                 ResetString(null);
                 interactable.enabled = true;
+                if (audioClips[toypulled] != null)
+                {
+                    audioSource.PlayOneShot(audioClips[toypulled]);
+                }
+                if (toypulled < 3) { toypulled++; }
             }
-
             stringRenderer.GetComponent<StringScript>().CreateString(pullTabGrabObject.position);
         }
     }
