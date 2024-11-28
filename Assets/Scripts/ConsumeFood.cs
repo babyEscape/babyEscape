@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+
 public class EatFood : MonoBehaviour
 {
     [Header("Food Related Settings")]
@@ -54,15 +55,26 @@ public class EatFood : MonoBehaviour
             climbLocomotion.enabled = true;
         }
 
-        StartCoroutine(FadeAfterCanvasGroup());
+        // Start fade-in, wait, then fade-out
+        StartCoroutine(FadeCanvasSequence());
     }
 
-    private IEnumerator FadeAfterCanvasGroup()
+    private IEnumerator FadeCanvasSequence()
     {
+        CanvasGroup canvasGroup = canvasObject.GetComponent<CanvasGroup>();
+        
         yield return new WaitForSeconds(uiStartDuration);
-        StartCoroutine(FadeCanvasGroup(canvasObject.GetComponent<CanvasGroup>(),1f, 0f, uiDuration));
+
+        // Fade in
+        yield return StartCoroutine(FadeCanvasGroup(canvasGroup, 0f, 1f, 1));
+        
+        // Wait for UI display time
+        yield return new WaitForSeconds(uiDuration);
+        
+        // Fade out
+        yield return StartCoroutine(FadeCanvasGroup(canvasGroup, 1f, 0f, 1));
     }
-    
+
     private IEnumerator FadeCanvasGroup(CanvasGroup canvasGroup, float start, float end, float duration)
     {
         float elapsedTime = 0f;
@@ -73,7 +85,7 @@ public class EatFood : MonoBehaviour
             canvasGroup.alpha = Mathf.Lerp(start, end, elapsedTime / duration);
             yield return null;
         }
-        
+
         canvasGroup.alpha = end;
     }
 }
