@@ -122,3 +122,10 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# development
+
+/.idea/
+/.vscode/
+mono_crash.0.0.json
+RuntimeActionBindings.json
