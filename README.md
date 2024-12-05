@@ -1,6 +1,6 @@
 # Baby Escape
 
-Watch playthrough here ⌄
+Watch playthrough here ↓
 
 https://drive.google.com/file/d/1LO-9rGwpv49inNAEJKdXiFVq7cvByOV9/view?usp=sharing
 
@@ -30,6 +30,6 @@ When grabbing a carrot, players recall the ability to interact with objects with
 ### Other "value-added" features
 Our game is made unique by its unique type of locomotion, range of interactions including via the microphone, and the models we took from [poly.pizza](https://poly.pizza/). The most stand-out element of our project, however, is its storyline and the way we reinforce it. 
 
-In the game, the player is a baby who wants to put a fork in an electrical outlet (inspired by[Who's Your Daddy](https://store.steampowered.com/app/427730/Whos_Your_Daddy/)), and we guide them to this goal using various post-it notes that still fit into the world of the game. For example, we created a post-it note that says “Make sure little Jimmy eats his veggies so he can grow strong”, hinting at a later puzzle where the player needs to eat carrots to grow strong enough to climb. This both reinforces the story and setting of the game, whilst also providing a hint to the player. 
+In the game, the player is a baby who wants to put a fork in an electrical outlet (inspired by [Who's Your Daddy](https://store.steampowered.com/app/427730/Whos_Your_Daddy/)), and we guide them to this goal using various post-it notes that still fit into the world of the game. For example, we created a post-it note that says “Make sure little Jimmy eats his veggies so he can grow strong”, hinting at a later puzzle where the player needs to eat carrots to grow strong enough to climb. This both reinforces the story and setting of the game, whilst also providing a hint to the player. 
 
 We also create this story using various audio files, including some original audio that plays from a toy robot which encourages them to pursue the main goal of the escape room when the player pulls its string. Additionally, when the player completes the goal, the robot visits them again and congratulates them on beating the game, providing an end to the story.
