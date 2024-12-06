@@ -1,6 +1,8 @@
 # Baby Escape
 
-Watch playthrough here ↓
+![shocking](https://github.com/user-attachments/assets/44de757d-ae0d-4164-8d2a-252de4ad1797) ![spit](https://github.com/user-attachments/assets/1dd37f32-243c-4241-95b2-119b65b389b9)
+
+Watch full playthrough here ↓
 
 https://drive.google.com/file/d/1LO-9rGwpv49inNAEJKdXiFVq7cvByOV9/view?usp=sharing
 
